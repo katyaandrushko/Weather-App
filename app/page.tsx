@@ -35,15 +35,18 @@ const Home = () => {
   let content
   if (Object.keys(data).length === 0 && error === '') {
     content = (
-      <div>
-        <h2 className="font-bold text-center">Welcome to the weather app</h2>
+      <div className="text-white text-center h-screen mt-[5rem]">
+        <h2 className="font-bold text-center text-3xl mb-4">
+          Welcome to the weather app
+        </h2>
+        <p className="text-xl">Enter a city name to get the weather forecast</p>
       </div>
     )
   } else if (error !== '') {
     content = (
-      <div>
-        <p>City not found</p>
-        <p>Enter another city</p>
+      <div className="text-white text-center h-screen mt-[5rem]">
+        <p className="text-3xl fonr-bold mb-4">City not found</p>
+        <p className="text-xl">Enter another city</p>
       </div>
     )
   } else {
@@ -64,7 +67,6 @@ const Home = () => {
   return (
     <div className="bg-cover bg-gradient-to-r from-blue-400 to-blue-200 h-fit">
       <div className="bg-white/25 w-full flex flex-col h-fit">
-        {/* INPUT AND LOGO */}
         <div className="flex flex-col md:flex-row justify-between items-center p-12">
           <Input handleSearch={handleSearch} setLocation={setLocation} />
           <h1 className="mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl italic font-bold">
